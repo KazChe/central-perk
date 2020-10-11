@@ -1,0 +1,226 @@
+<osm version="0.6" generator="CGImap 0.8.3 (1991881 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+    <way id="427818536" visible="true" version="49" changeset="89713587" timestamp="2020-08-20T22:22:47Z" user="promiseofbirth" uid="6457180">
+        <nd ref="6991136395"/>
+        <nd ref="6991136391"/>
+        <nd ref="6991124651"/>
+        <nd ref="6991136407"/>
+        <nd ref="6991136419"/>
+        <nd ref="6991124639"/>
+        <nd ref="6991124627"/>
+        <nd ref="6991136417"/>
+        <nd ref="6991136393"/>
+        <nd ref="6991136389"/>
+        <nd ref="6991136400"/>
+        <nd ref="6991124681"/>
+        <nd ref="6991124669"/>
+        <nd ref="6991124635"/>
+        <nd ref="6991136436"/>
+        <nd ref="6991136425"/>
+        <nd ref="6991136413"/>
+        <nd ref="6991124665"/>
+        <nd ref="6991124654"/>
+        <nd ref="6991124641"/>
+        <nd ref="6991124630"/>
+        <nd ref="6991124676"/>
+        <nd ref="6991124646"/>
+        <nd ref="6991124658"/>
+        <nd ref="6991400337"/>
+        <nd ref="6991400366"/>
+        <nd ref="6991414897"/>
+        <nd ref="6991400329"/>
+        <nd ref="6991400360"/>
+        <nd ref="6991414890"/>
+        <nd ref="6991400322"/>
+        <nd ref="6991400355"/>
+        <nd ref="6991400384"/>
+        <nd ref="6991400316"/>
+        <nd ref="6991400383"/>
+        <nd ref="6991400315"/>
+        <nd ref="6991400348"/>
+        <nd ref="6991400378"/>
+        <nd ref="6991400312"/>
+        <nd ref="6991400309"/>
+        <nd ref="6991400323"/>
+        <nd ref="6991400317"/>
+        <nd ref="6991400350"/>
+        <nd ref="6991400339"/>
+        <nd ref="6991400380"/>
+        <nd ref="6991400313"/>
+        <nd ref="6991400368"/>
+        <nd ref="6991400345"/>
+        <nd ref="6991400374"/>
+        <nd ref="6991414898"/>
+        <nd ref="6991400367"/>
+        <nd ref="6991400308"/>
+        <nd ref="6991400379"/>
+        <nd ref="7093980567"/>
+        <nd ref="6991400344"/>
+        <nd ref="6991414892"/>
+        <nd ref="6991400324"/>
+        <nd ref="7093980560"/>
+        <nd ref="7093980558"/>
+        <nd ref="7093980570"/>
+        <nd ref="3341858519"/>
+        <nd ref="3392519827"/>
+        <nd ref="3392519825"/>
+        <nd ref="3392519829"/>
+        <nd ref="3392519847"/>
+        <nd ref="3392519860"/>
+        <nd ref="3392519861"/>
+        <nd ref="3341858518"/>
+        <nd ref="7785624629"/>
+        <nd ref="7785624644"/>
+        <nd ref="7785624681"/>
+        <nd ref="7785624660"/>
+        <nd ref="7785624616"/>
+        <nd ref="6991414900"/>
+        <nd ref="6991400375"/>
+        <nd ref="7785624620"/>
+        <nd ref="6991400370"/>
+        <nd ref="6991400307"/>
+        <nd ref="6991414894"/>
+        <nd ref="6991400319"/>
+        <nd ref="6991414887"/>
+        <nd ref="6991400326"/>
+        <nd ref="6991400346"/>
+        <nd ref="6991400314"/>
+        <nd ref="6991400342"/>
+        <nd ref="3602661071"/>
+        <nd ref="6991400371"/>
+        <nd ref="6991414901"/>
+        <nd ref="3602661070"/>
+        <nd ref="6991400334"/>
+        <nd ref="7830757207"/>
+        <nd ref="42453674"/>
+        <nd ref="42453676"/>
+        <nd ref="2902437013"/>
+        <nd ref="42433870"/>
+        <nd ref="1283225217"/>
+        <nd ref="4347535694"/>
+        <nd ref="7830685364"/>
+        <nd ref="2553978278"/>
+        <nd ref="4347550072"/>
+        <nd ref="7830757189"/>
+        <nd ref="1659429013"/>
+        <nd ref="6991124653"/>
+        <nd ref="6838446021"/>
+        <nd ref="1659429064"/>
+        <nd ref="6838446017"/>
+        <nd ref="6991124664"/>
+        <nd ref="1659429078"/>
+        <nd ref="1825841723"/>
+        <nd ref="1659429162"/>
+        <nd ref="6838446016"/>
+        <nd ref="1659429202"/>
+        <nd ref="6991124629"/>
+        <nd ref="1659429228"/>
+        <nd ref="4347550058"/>
+        <nd ref="1659429258"/>
+        <nd ref="4347550067"/>
+        <nd ref="4997760450"/>
+        <nd ref="2710141721"/>
+        <nd ref="2710141733"/>
+        <nd ref="6991124650"/>
+        <nd ref="6991136385"/>
+        <nd ref="6991136397"/>
+        <nd ref="6991136409"/>
+        <nd ref="6991136421"/>
+        <nd ref="6991124631"/>
+        <nd ref="6991136432"/>
+        <nd ref="6991136410"/>
+        <nd ref="6991136433"/>
+        <nd ref="6991136422"/>
+        <nd ref="6991124677"/>
+        <nd ref="6991124666"/>
+        <nd ref="6991124632"/>
+        <nd ref="6991124643"/>
+        <nd ref="6794406110"/>
+        <nd ref="6991136390"/>
+        <nd ref="6991136426"/>
+        <nd ref="6991136437"/>
+        <nd ref="6991124636"/>
+        <nd ref="7104620799"/>
+        <nd ref="6991124659"/>
+        <nd ref="6991124682"/>
+        <nd ref="6991136394"/>
+        <nd ref="7146903295"/>
+        <nd ref="6991136418"/>
+        <nd ref="6991136430"/>
+        <nd ref="6991124640"/>
+        <nd ref="6991124628"/>
+        <nd ref="6991124652"/>
+        <nd ref="6991124663"/>
+        <nd ref="6991124674"/>
+        <nd ref="7146903298"/>
+        <nd ref="6991136387"/>
+        <nd ref="7120586338"/>
+        <nd ref="6794406099"/>
+        <nd ref="6991136398"/>
+        <nd ref="6991136386"/>
+        <nd ref="6991136424"/>
+        <nd ref="6991124673"/>
+        <nd ref="6991136411"/>
+        <nd ref="6991136423"/>
+        <nd ref="6991124633"/>
+        <nd ref="6991124644"/>
+        <nd ref="6991124656"/>
+        <nd ref="6991124667"/>
+        <nd ref="6991124679"/>
+        <nd ref="6991136403"/>
+        <nd ref="6991136416"/>
+        <nd ref="6991136428"/>
+        <nd ref="6991136439"/>
+        <nd ref="6991136435"/>
+        <nd ref="6991124638"/>
+        <nd ref="6991124649"/>
+        <nd ref="6991124634"/>
+        <nd ref="6991124661"/>
+        <nd ref="6991124645"/>
+        <nd ref="6991124672"/>
+        <nd ref="6991124684"/>
+        <nd ref="6991124657"/>
+        <nd ref="6991124678"/>
+        <nd ref="6991124668"/>
+        <nd ref="6991124680"/>
+        <nd ref="6991136392"/>
+        <nd ref="6991124662"/>
+        <nd ref="6991136404"/>
+        <nd ref="6991136438"/>
+        <nd ref="6991136427"/>
+        <nd ref="6991124637"/>
+        <nd ref="6991136415"/>
+        <nd ref="6991124648"/>
+        <nd ref="6991124660"/>
+        <nd ref="6991124671"/>
+        <nd ref="6991136408"/>
+        <nd ref="6991124683"/>
+        <nd ref="6991136402"/>
+        <nd ref="6991136395"/>
+        <tag k="architect" v="Frederick Law Olmstead;Calvert Vaux"/>
+        <tag k="heritage" v="2"/>
+        <tag k="heritage:operator" v="nrhp"/>
+        <tag k="heritage:website" v="https://www.nps.gov/subjects/nationalregister/index.htm"/>
+        <tag k="leisure" v="park"/>
+        <tag k="name" v="Central Park"/>
+        <tag k="name:el" v="Κεντρικό πάρκο"/>
+        <tag k="name:fa" v="پارک مرکزی"/>
+        <tag k="name:hi" v="सेंट्रल पार्क"/>
+        <tag k="name:ja" v="中央公園"/>
+        <tag k="name:kn" v="ಸೆಂಟ್ರಲ್ ಪಾರ್ಕ್"/>
+        <tag k="name:ko" v="센트럴 파크"/>
+        <tag k="name:ru" v="Центральный парк"/>
+        <tag k="name:tr" v="Central Park"/>
+        <tag k="name:zh" v="中央公园"/>
+        <tag k="nrhp:inscription_date" v="1966-10-15"/>
+        <tag k="nrhp:nhl" v="yes"/>
+        <tag k="nrhp:nhl:inscription_date" v="1963-05-23"/>
+        <tag k="opening_hours" v="06:00-01:00"/>
+        <tag k="operator" v="Central Park Conservancy"/>
+        <tag k="owner" v="NYC Parks"/>
+        <tag k="ref:nrhp" v="66000538"/>
+        <tag k="smoking" v="no"/>
+        <tag k="website" v="https://www.centralparknyc.org"/>
+        <tag k="wikidata" v="Q160409"/>
+        <tag k="wikipedia" v="en:Central Park"/>
+    </way>
+</osm>

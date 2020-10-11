@@ -1,5 +1,7 @@
-### Will be using this as the base template for integrating  Neo4j, Gatsby and GraphQL
+##### Will be using this as the base template for integrating  Neo4j, Gatsby and GraphQL
 
+- read [Using Third-party GraphQL APIs](9https://www.gatsbyjs.com/docs/third-party-graphql/)
+- Got data from OpenStreetMap for [Central Park, Manhattan,NY](https://www.openstreetmap.org/search?query=central%20park#map=14/40.7825/-73.9655)
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
