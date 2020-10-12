@@ -1,6 +1,7 @@
 const { makeAugmentedSchema } = require('neo4j-graphql-js')
 const { ApolloServer } = require('apollo-server')
 const neo4j = require('neo4j-driver')
+require('dotenv').config()
 
 /*
   Note regarding the first cypher directive used.
@@ -43,7 +44,7 @@ const typeDefs = `
 
 const schema = makeAugmentedSchema({typeDefs})
 const driver = neo4j.driver(
-    "bolt://54.237.210.186:33242", neo4j.auth.basic("neo4j", "forecast-coordinates-targets"))
+    process.env.NEO4J_URI, neo4j.auth.basic(process.env.NEO4J_USER, process.env.NEO4J_PASSWORD))
 const apolloServer = new ApolloServer({schema, context: {driver} })
 
 apolloServer.listen(3003, '0.0.0.0').then(({ url }) => {
