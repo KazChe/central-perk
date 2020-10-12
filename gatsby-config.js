@@ -13,6 +13,22 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: `PointOfInterest`,
+        fieldName: `poi`,
+        url: `http://localhost:3003`
+      }
+    },
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: `PointOfInterest`,
+        fieldName: `poi`,
+        url: `http://localhost:3003`
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
