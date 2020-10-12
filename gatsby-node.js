@@ -10,21 +10,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Get all markdown blog posts sorted by date
   const result = await graphql(
     `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          nodes {
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-            }
-          }
-        }
-      }
+ {
+  poi{
+    PointOfInterest {
+      name
+      type
+      node_osm_id
+    }
+  }
+}
     `
   )
 
@@ -36,7 +30,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const posts = result.data.poi.PointOfInterest
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
@@ -48,10 +42,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const next = index === 0 ? null : posts[index - 1]
 
       createPage({
-        path: post.fields.slug,
+        path: post.node_osm_id,
         component: blogPost,
         context: {
-          slug: post.fields.slug,
+          slug: post.node_osm_id,
           previous,
           next,
         },
@@ -60,19 +54,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
-}
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//   const { createNodeField } = actions
+//
+//   if (node.internal.type === `MarkdownRemark`) {
+//     const value = createFilePath({ node, getNode })
+//
+//     createNodeField({
+//       name: `slug`,
+//       node,
+//       value,
+//     })
+//   }
+// }
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions

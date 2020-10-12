@@ -17,14 +17,20 @@ const typeDefs = `
         longitude: Float
     }
     
+    type Tag {
+        key: String
+        value: String
+    }
+    
     type PointOfInterest {
         name: String
         location: Point
         type: String
-        node_osm_id: Int
-        tags: [String] @cypher(statement: """
-        MATCH (this)-[:TAGS]->(t:OSMTags)
-        RETURN keys(t)
+        node_osm_id: ID!
+        tags: [Tag] @cypher(statement: """
+        MATCH (this)-->(t:OSMTags)
+        UNWIND keys(t) AS key
+        RETURN {key: key, value: t[key]}
         """)
         routeToPOI(poi: Int!): [Step] @cypher(statement: """
         MATCH (other:PointOfInterest {node_osm_id: $poi})

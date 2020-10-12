@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Central Perk`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Some Dude`,
+      summary: `Travel Guide.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `Travel guide to Central Park using GraphQL,Neo4j and Gatsby`,
+    siteUrl: `https://netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `kazche`,
     },
   },
   plugins: [

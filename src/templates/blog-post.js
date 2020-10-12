@@ -6,15 +6,15 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
+  const post = data.poi.PointOfInterest[0]
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = pageContext
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={post.name}
+        description={post.type}
       />
       <article
         className="blog-post"
@@ -22,13 +22,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <h1 itemProp="headline">{post.name}</h1>
+          <p>{post.node_osm_id}</p>
         </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
+          <p>
+              <ul>
+                  {post.tags?.map((t,i) => {
+                      return <li key={i}><strong>{t.key}</strong>: {t.value}</li>
+                  })}
+              </ul>
+          </p>
         <hr />
         <footer>
           <Bio />
@@ -46,15 +49,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+              <Link to={`/`+previous.node_osm_id} rel="prev">
+                ← {previous.name}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+              <Link to={`/`+next.node_osm_id} rel="next">
+                {next.name} →
               </Link>
             )}
           </li>
@@ -67,21 +70,25 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
+    query POIBySlug($slug: ID!) {
+        site {
+            siteMetadata {
+                title
+            }
+        }
+        poi{
+            PointOfInterest(node_osm_id: $slug ) {
+                name
+                type
+                location {
+                    longitude
+                    latitude
+                }
+                tags {
+                    key
+                    value
+                }
+            }
+        }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        description
-      }
-    }
-  }
 `
