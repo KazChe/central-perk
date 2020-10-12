@@ -17,3 +17,10 @@ return {latitude: node.location.latitude, longitude: node.location.longitude}
 Note that above query might not be the actual shortest distance between two points.
 It brings back shortest numbers of relationships.
 You might want use other Graph Data Science alogs for shortest weighted path.
+---
+
+#### To run
+- need to get access to neo4j sandox for OSM data.
+- run npm i in both the root `gatsby-project` and `neo4j-grpahql` directories
+- cd to `neo4j-grpahql`start neo4j backed graphql server (Apollo) and run `npm start`
+- `cd ..` and run `gatsby develop`
