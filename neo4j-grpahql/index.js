@@ -2,6 +2,7 @@ const { makeAugmentedSchema } = require('neo4j-graphql-js')
 const { ApolloServer } = require('apollo-server')
 const neo4j = require('neo4j-driver')
 require('dotenv').config()
+const axios = require('axios')
 
 /*
   Note regarding the first cypher directive used.
@@ -28,7 +29,7 @@ const typeDefs = `
         location: Point
         type: String
         node_osm_id: ID!
-        
+        photos: [String] @neo4j_ignore
         tags: [Tag] @cypher(statement: """
         MATCH (this)-->(t:OSMTags)
         UNWIND keys(t) AS key
@@ -42,8 +43,21 @@ const typeDefs = `
         """)
     }
 `
+const resolvers = {
+    PointOfInterest: {
+        photos: async (poi, args) => {
+          const requestURL = `https://a.mapillary.com/v3/images?client_id=${process.env.MAPILLARY_KEY}&lookat=${poi.location.longitude},${poi.location.latitude}&closeto=${poi.location.longitude},${poi.location.latitude}&radius=100&per_page=5`
+            const response = await axios.get(requestURL)
 
-const schema = makeAugmentedSchema({typeDefs})
+            const features = response.data.features
+            return features.map((v) => {
+              return `https://images.mapillary.com/${v.properties.key}/thumb-640.jpg`
+            })
+        }
+    }
+}
+
+const schema = makeAugmentedSchema({typeDefs, resolvers})
 const driver = neo4j.driver(
     process.env.NEO4J_URI, neo4j.auth.basic(process.env.NEO4J_USER, process.env.NEO4J_PASSWORD))
 const apolloServer = new ApolloServer({schema, context: {driver} })
