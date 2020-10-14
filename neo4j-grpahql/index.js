@@ -29,7 +29,7 @@ const typeDefs = `
         location: Point
         type: String
         node_osm_id: ID!
-        photos: [String] @neo4j_ignore
+        photos(first: Int = 10, radius: Int = 100): [String] @neo4j_ignore
         tags: [Tag] @cypher(statement: """
         MATCH (this)-->(t:OSMTags)
         UNWIND keys(t) AS key
@@ -46,7 +46,7 @@ const typeDefs = `
 const resolvers = {
     PointOfInterest: {
         photos: async (poi, args) => {
-          const requestURL = `https://a.mapillary.com/v3/images?client_id=${process.env.MAPILLARY_KEY}&lookat=${poi.location.longitude},${poi.location.latitude}&closeto=${poi.location.longitude},${poi.location.latitude}&radius=100&per_page=5`
+          const requestURL = `https://a.mapillary.com/v3/images?client_id=${process.env.MAPILLARY_KEY}&lookat=${poi.location.longitude},${poi.location.latitude}&closeto=${poi.location.longitude},${poi.location.latitude}&radius=${args.radius}&per_page=${args.first}`
             const response = await axios.get(requestURL)
 
             const features = response.data.features
