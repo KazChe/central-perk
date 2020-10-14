@@ -20,7 +20,8 @@ You might want use other Graph Data Science alogs for shortest weighted path.
 ---
 
 #### To run
-- need to get access to neo4j sandox for OSM data.
+- need to get access to neo4j sandbox for OSM data.
+- Add your neo4j sandbox bolt url and credentials to `neo4j-graphql` directory's `.env` file
 - run npm i in both the root `gatsby-project` and `neo4j-grpahql` directories
 - cd to `neo4j-grpahql`start neo4j backed graphql server (Apollo) and run `npm start`
 - `cd ..` and run `gatsby develop`

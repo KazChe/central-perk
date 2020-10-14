@@ -28,6 +28,7 @@ const typeDefs = `
         location: Point
         type: String
         node_osm_id: ID!
+        
         tags: [Tag] @cypher(statement: """
         MATCH (this)-->(t:OSMTags)
         UNWIND keys(t) AS key
