@@ -29,7 +29,7 @@ const typeDefs = `
         location: Point
         type: String
         node_osm_id: ID!
-        photos(first: Int = 10, radius: Int = 100): [String] @neo4j_ignore
+        photos(first: Int = 5, radius: Int = 100): [String] @neo4j_ignore
         tags: [Tag] @cypher(statement: """
         MATCH (this)-->(t:OSMTags)
         UNWIND keys(t) AS key
@@ -43,6 +43,7 @@ const typeDefs = `
         """)
     }
 `
+
 const resolvers = {
     PointOfInterest: {
         photos: async (poi, args) => {
@@ -58,8 +59,7 @@ const resolvers = {
 }
 
 const schema = makeAugmentedSchema({typeDefs, resolvers})
-const driver = neo4j.driver(
-    process.env.NEO4J_URI, neo4j.auth.basic(process.env.NEO4J_USER, process.env.NEO4J_PASSWORD))
+const driver = neo4j.driver(process.env.NEO4J_URI, neo4j.auth.basic(process.env.NEO4J_USER, process.env.NEO4J_PASSWORD))
 const apolloServer = new ApolloServer({schema, context: {driver} })
 
 apolloServer.listen(3003, '0.0.0.0').then(({ url }) => {

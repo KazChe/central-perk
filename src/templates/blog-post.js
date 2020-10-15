@@ -8,7 +8,12 @@ import SEO from "../components/seo"
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.poi.PointOfInterest[0]
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = pageContext
+  const { next, previous } = pageContext
+
+  // Show the Captain if no photos were found.
+  if(post.photos.length == 0) {
+      post.photos[0] = "https://racodemia.files.wordpress.com/2019/01/kirk.jpg"
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -23,6 +28,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       >
         <header>
           <h1 itemProp="headline">{post.name}</h1>
+            <img src={post.photos[0]} alt={`Photo of ${post.name}`}/>
           <p>{post.node_osm_id}</p>
         </header>
           <p>
@@ -46,18 +52,17 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             listStyle: `none`,
             padding: 0,
           }}
-        >
+        ><li>
+                {next && (
+                    <Link to={`/`+next.node_osm_id} rel="next">
+                        {next.name} →
+                    </Link>
+                )}
+            </li>
           <li>
             {previous && (
               <Link to={`/`+previous.node_osm_id} rel="prev">
                 ← {previous.name}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={`/`+next.node_osm_id} rel="next">
-                {next.name} →
               </Link>
             )}
           </li>
@@ -88,6 +93,7 @@ export const pageQuery = graphql`
                     key
                     value
                 }
+                photos
             }
         }
     }
