@@ -25,3 +25,25 @@ You might want use other Graph Data Science alogs for shortest weighted path.
 - run npm i in both the root `gatsby-project` and `neo4j-grpahql` directories
 - cd to `neo4j-grpahql`start neo4j backed graphql server (Apollo) and run `npm start`
 - `cd ..` and run `gatsby develop`
+- Example graphql query:
+```
+{
+  PointOfInterest(first: 1) {
+    name
+    node_osm_id
+    location {
+      latitude
+      longitude
+    }
+    routeToPOI(poi: "246164695") {
+      latitude
+      longitude
+    }
+    node_osm_id
+    location {
+      longitude
+      latitude
+    }
+  }
+}
+```

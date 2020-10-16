@@ -41,7 +41,7 @@ const typeDefs = `
         UNWIND keys(t) AS key
         RETURN {key: key, value: t[key]}
         """)
-        routeToPOI(poi: Int!): [Step] @cypher(statement: """
+        routeToPOI(poi: ID!): [Step] @cypher(statement: """
         MATCH (other:PointOfInterest {node_osm_id: $poi})
         MATCH sp=shortestPath( (this)-[:ROUTE*..200]-(other) )
         UNWIND nodes(sp) AS node
