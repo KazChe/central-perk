@@ -29,7 +29,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <header>
           <h1 itemProp="headline">{post.name}</h1>
             <img src={post.photos[0]} alt={`Photo of ${post.name}`}/>
-          <p>{post.node_osm_id}</p>
+            <p>{post.node_osm_id}</p>
         </header>
           <p>
               <ul>
@@ -38,6 +38,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                   })}
               </ul>
           </p>
+          <div dangerouslySetInnerHTML={{__html: post.wikipedia}} />
         <hr />
         <footer>
           <Bio />
@@ -94,6 +95,7 @@ export const pageQuery = graphql`
                     value
                 }
                 photos
+                wikipedia
             }
         }
     }

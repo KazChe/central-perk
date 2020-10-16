@@ -29,6 +29,12 @@ const typeDefs = `
         location: Point
         type: String
         node_osm_id: ID!
+        wikipedia: String @cypher(statement: """
+        match (this)-->(t:OSMTags)
+        where exists(t.wikipedia) with t limit 1
+        call apoc.load.json('https://en.wikipedia.org/w/api.php?action=parse&prop=text&formatversion=2&format=json&page='+apoc.text.urlencode(t.wikipedia)) yield value
+        return value.parse.text
+        """)
         photos(first: Int = 5, radius: Int = 100): [String] @neo4j_ignore
         tags: [Tag] @cypher(statement: """
         MATCH (this)-->(t:OSMTags)
