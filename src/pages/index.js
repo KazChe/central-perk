@@ -1,13 +1,21 @@
-import React from "react"
+import React, {useState} from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import MapGL from '@urbica/react-map-gl'
+// import 'mapbox-gl/dist/mapbox-gl.css'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.poi.PointOfInterest
+
+    const [viewport,setViewport] = useState({
+        latitude: 40.7812,
+        longitude: -73.9665,
+        zoom: 13
+    })
 
   if (posts.length === 0) {
     return (
@@ -27,6 +35,16 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
+
+      <MapGL
+          style={{width: '80%', height: '500px'}}
+          mapStyle='mapbox://styles/mapbox/streets-v11'
+          accessToken={process.env.GATSBY_MAPBOX_KEY}
+          latitude={viewport.latitude}
+          longitude={viewport.longitude}
+          zoom={viewport.zoom}
+          onViewportChange={setViewport}
+      />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.name || post.node_osm_id

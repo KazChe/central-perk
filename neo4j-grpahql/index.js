@@ -48,8 +48,11 @@ const typeDefs = `
         RETURN { latitude: node.location.latitude, longitude: node.location.longitude} AS route
         """)
     }
+    
+    type CitiesByUUID {
+        cities(ids: [String!]): [String!]
+    }
 `
-
 const resolvers = {
     PointOfInterest: {
         photos: async (poi, args) => {
@@ -60,6 +63,15 @@ const resolvers = {
             return features.map((v) => {
               return `https://images.mapillary.com/${v.properties.key}/thumb-640.jpg`
             })
+        }
+    },
+    CitiesByUUID: {
+        cities: async (ids, args) => {
+            const session = driver.session;
+            const uuIds = split(args)
+            const result = await session.run(
+                `CALL apoc.cypher.run(MATCH(c:City) WHERE c.name IN [${uuIds}] RETURN c, {}) YIELD value RETURN value`
+            )
         }
     }
 }

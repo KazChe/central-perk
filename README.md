@@ -4,6 +4,7 @@
 
 - Go over [Using Third-party GraphQL APIs](https://www.gatsbyjs.com/docs/third-party-graphql/)
 - Using [Neo4j SandBox](https://sandbox.neo4j.com/) for OSM Data
+- https://docs.mapbox.com/mapbox-gl-js
 ---
 
 Finds a route between two points of interest - see [Neo4j Shortest Path](https://neo4j.com/docs/graph-data-science/current/alpha-algorithms/shortest-path/)
