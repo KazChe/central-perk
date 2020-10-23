@@ -11,9 +11,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { next, previous } = pageContext
 
   // Show the Captain if no photos were found.
-  if(post.photos.length == 0) {
-      post.photos[0] = "https://racodemia.files.wordpress.com/2019/01/kirk.jpg"
-  }
+  // if(post.photos.length == 0) {
+  //     post.photos[0] = "NA"
+  // }
 
   return (
     <Layout location={location} title={siteTitle}>
